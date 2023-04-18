@@ -1,0 +1,7 @@
+#pragma once
+#include "IShape.h"
+
+class Square :public IShape {
+private:
+
+};
