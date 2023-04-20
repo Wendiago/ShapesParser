@@ -1,9 +1,9 @@
 8
-Square 12
-Circle 17
-Square 7
-Rectangle 3 4
-Rectangle 6 8
-Circle 5
-Square 8
-Rectangle 4 23
+Square: a=12
+Circle: r=17
+Square: a=7
+Rectangle: w=3, h=4
+Rectangle: w=6, h=8
+Circle: r=5
+Square: a=8
+Rectangle: w=4, h=23

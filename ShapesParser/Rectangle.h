@@ -1,6 +1,5 @@
 #pragma once
 #include "IShape.h"
-using namespace std;
 
 class Rectangle :public IShape {
 private:
@@ -15,6 +14,7 @@ public:
 	double width() const;
 	void setHeight(double);
 	double height() const;
+	string type() const;
 public:
 	double area() const override;
 	double perimeter() const override;

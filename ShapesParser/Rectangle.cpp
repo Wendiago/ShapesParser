@@ -26,6 +26,11 @@ double Rectangle::height() const
 	return _height;
 }
 
+string Rectangle::type() const
+{
+	return "Rectangle";
+}
+
 double Rectangle::area() const 
 {
 	return _width*_height;
