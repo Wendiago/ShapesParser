@@ -13,6 +13,7 @@ public:
 public:
 	void setRadius(double);
 	double radius() const;
+	string type() const;
 public:
 	double area() const override;
 	double perimeter() const override;

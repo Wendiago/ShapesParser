@@ -16,6 +16,11 @@ double Circle::radius() const
 	return _radius;
 }
 
+string Circle::type() const
+{
+	return "Circle";
+}
+
 double Circle::area() const
 {
 	return _radius*_radius*pi;

@@ -141,18 +141,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="CircleParser.cpp" />
+    <ClCompile Include="IParser.cpp" />
     <ClCompile Include="IShape.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ParserFactory.cpp" />
     <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="RectangleParser.cpp" />
+    <ClCompile Include="Square.cpp" />
+    <ClCompile Include="SquareParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="shapes.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Circle.h" />
+    <ClInclude Include="CircleParser.h" />
+    <ClInclude Include="ParserFactory.h" />
+    <ClInclude Include="IParser.h" />
     <ClInclude Include="IShape.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="RectangleParser.h" />
     <ClInclude Include="Square.h" />
+    <ClInclude Include="SquareParser.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -11,6 +11,7 @@ public:
 public:
 	void setEdge(double);
 	double edge() const;
+	string type() const;
 public:
 	double area() const override;
 	double perimeter() const override;

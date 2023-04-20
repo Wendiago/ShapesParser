@@ -16,6 +16,11 @@ double Square::edge() const
 	return _edge;
 }
 
+string Square::type() const
+{
+	return "Square";
+}
+
 double Square::area() const
 {
 	return _edge*_edge;
