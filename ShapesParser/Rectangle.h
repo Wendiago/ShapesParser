@@ -11,6 +11,11 @@ public:
 	Rectangle(double, double);
 	~Rectangle();
 public:
-	double area() const;
-	double perimeter() const;
+	void setWidth(double);
+	double width() const;
+	void setHeight(double);
+	double height() const;
+public:
+	double area() const override;
+	double perimeter() const override;
 };
