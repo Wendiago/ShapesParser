@@ -4,6 +4,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 #include "IShape.h"
 #include "Object.h"
 #include "IParser.h"
