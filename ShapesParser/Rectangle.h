@@ -1,6 +1,5 @@
 #pragma once
 #include "IShape.h"
-using namespace std;
 
 class Rectangle :public IShape {
 private:

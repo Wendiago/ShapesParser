@@ -1,8 +1,6 @@
 #include "CircleParser.h"
 #include "IShape.h"
 #include "Circle.h"
-#include <string>
-#include <sstream>
 
 //Pattern: "Circle: r=5"
 IShape* CircleParser::parse(stringstream data)
