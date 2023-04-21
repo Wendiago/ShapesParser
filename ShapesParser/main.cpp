@@ -5,8 +5,13 @@
 #include "CircleParser.h"
 #include "ParserFactory.h"
 #include "IShapeTextDataProvider.h"
+#include <algorithm>
 
 using std::cin, std::cout, std::endl;
+
+bool compareShapeArea(const IShape* a, const IShape* b) {
+	return a->area() < b->area();
+}
 
 int main()
 {
@@ -24,8 +29,10 @@ int main()
 	auto shapes = reader.read(fileName, factory);
 
 	cout << shapes.size() << " shapes found" << endl;
-	for (auto s : shapes)
-	{
+	
+	sort(shapes.begin(), shapes.end(), compareShapeArea);
+
+	for (auto s : shapes) {
 		cout << s->type() << ", Area: " << s->area() << ", Perimeter: " << s->perimeter() << endl;
 	}
 }
