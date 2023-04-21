@@ -2,7 +2,7 @@
 #include "IShape.h"
 #include <iomanip>
 
-using std::left, std::setw, std::setprecision;
+using std::left, std::setw, std::fixed, std::setprecision;
 
 class Square :public IShape {
 private:
