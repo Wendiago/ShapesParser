@@ -31,6 +31,12 @@ double Square::perimeter() const
 	return _edge*4;
 }
 
-
-
-
+void Square::doPrint(ostream& out) const{
+	out << left << setw(15) << this->type()
+		<< left << setw(2) << "|"
+		<< left << setw(30) << "Edge = " << this->_edge
+		<< left << setw(2) << "|"
+		<< left << setw(20) << "Perimeter = " << setprecision(1) << this->perimeter()
+		<< left << setw(2) << "|"
+		<< left << setw(20) << "Area = " << setprecision(2) << this->area();
+}

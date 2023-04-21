@@ -1,5 +1,8 @@
 #pragma once
 #include "IShape.h"
+#include <iomanip>
+
+using std::left, std::setw, std::setprecision;
 
 class Square :public IShape {
 private:
@@ -15,4 +18,6 @@ public:
 public:
 	double area() const override;
 	double perimeter() const override;
+public:
+	void doPrint(ostream&) const override;
 };
