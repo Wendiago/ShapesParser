@@ -1,44 +1,34 @@
-#include <string>
-#include <sstream>
 #include "RectangleParser.h"
 #include "Rectangle.h"
-#include "IShape.h"
-using std::exception, std::string;
 
 // Pattern: "Rectangle: w=3, h=4"
 IShape* RectangleParser::parse(stringstream data)
 {
+	regex checkData("(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+.|\\d+.\\d+),(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+.|\\d+.\\d+)");
 	double weight = 0.0;
-	double height = 0.0;
+	double height = 0.0; 	
+	string checkS = data.str();
+	IShape* rectangle = nullptr;
 	
-	//Extract the part we don't need
-	string temp;
-	getline(data, temp, '=');
-	string str_weight;
-	string str_height;
-	try
-	{
-		getline(data, str_weight, ',');
-		weight = stod(str_weight);
-	}
-	catch (exception ex)
-	{
-		throw exception("Invalid weight");
+	//checking the data
+	bool check = regex_match(checkS, checkData);
+
+	if (check == true) {
+		string temp;
+		//Extract the value we don't need
+		getline(data, temp, '=');
+
+		getline(data, temp, ',');
+		weight = stod(temp);
+
+		//Extract the part we don't need
+		getline(data, temp, '=');
+
+		getline(data, temp, ',');
+		height = stod(temp);
+
+		rectangle = new Rectangle(weight, height);
 	}
 	
-	//Extract the part we don't need
-	getline(data, temp, '=');
-
-	try
-	{
-		getline(data, str_height, ',');
-		height = stod(str_height);
-	}
-	catch (exception ex)
-	{
-		throw exception("Invalid height");
-	}
-
-	IShape* rectangle = new Rectangle(weight, height);
 	return rectangle;
 }
