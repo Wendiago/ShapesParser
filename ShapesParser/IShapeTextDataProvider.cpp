@@ -28,10 +28,13 @@ vector<IShape*> IShapeTextDataProvider::read(string input, ParserFactory factory
 
 			//Select parser based on type
 			IParser* parser = factory.select(type);
-			if (parser != nullptr)
-			{
+
+			if (parser != nullptr){
 				IShape* shape = parser->parse((stringstream)data); //Parse data to the corresponding parser, return the shape
-				shapes.push_back(shape); //Push the shape to the list
+
+				if (shape != nullptr) {
+					shapes.push_back(shape); //Push the shape to the list
+				}
 			}
 		}
 
