@@ -1,4 +1,5 @@
 #include "Circle.h"
+using std::stringstream;
 
 Circle::Circle():_radius(1.0){}
 
@@ -32,9 +33,22 @@ double Circle::perimeter() const
 }
 
 void Circle::doPrint(ostream& out) const{
+	//Convert to string for printing out
+	stringstream ss;
+	ss << fixed << setprecision(2) << this->_radius;
+	string str_radius = ss.str();
+
+	ss.str("");
+	ss << fixed << setprecision(1) << this->perimeter();
+	string str_peri = ss.str();
+
+	ss.str("");
+	ss << fixed << setprecision(2) << this->area();
+	string str_area = ss.str();
+
 	out << left << setw(15) << this->type()
-		<< left << setw(10) << " | Radius = " << this->_radius
-		<< left << setw(10) << " | Perimeter = " << fixed << setprecision(1) << this->perimeter()
-		<< left << setw(10) << " | Area = " << fixed << setprecision(2) << this->area()
+		<< left << setw(35) << " | Radius = " + str_radius
+		<< left << setw(20) << " | Perimeter = " + str_peri
+		<< left << setw(16) << " | Area = " + str_area
 		<< " | ";
 }

@@ -1,4 +1,5 @@
 #include "Square.h"
+using std::to_string, std::stringstream;
 
 Square::Square() : _edge(1.0) {}
 
@@ -32,9 +33,22 @@ double Square::perimeter() const
 }
 
 void Square::doPrint(ostream& out) const{
+	//Convert to string for printing out
+	stringstream ss;
+	ss << fixed << setprecision(2) << this->_edge;
+	string str_edge = ss.str();
+
+	ss.str("");
+	ss << fixed << setprecision(1) << this->perimeter();
+	string str_peri = ss.str();
+
+	ss.str("");
+	ss << fixed << setprecision(2) << this->area();
+	string str_area = ss.str();
+
 	out << left << setw(15) << this->type()
-		<< left << setw(10) << " | Edge = " << this->_edge
-		<< left << setw(10) << " | Perimeter = " << fixed << setprecision(1) << this->perimeter()
-		<< left << setw(10) << " | Area = " << fixed << setprecision(2) << this->area()
+		<< left << setw(35) << " | Edge = " + str_edge
+		<< left << setw(20) << " | Perimeter = " + str_peri
+		<< left << setw(16) << " | Area = " + str_area
 		<< " | ";
 }
