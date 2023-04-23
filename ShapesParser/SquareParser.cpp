@@ -3,15 +3,15 @@
 
 IShape* SquareParser::parse(stringstream data)
 {
-	regex checkData("(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+.|\\d+.\\d+)"); 
+	regex dataPattern("(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+.|\\d+.\\d+)"); 
 	double edge = 0.0;
-	string checkS = data.str();
+	string dataString = data.str();
 	IShape* square = nullptr;
 
 	//checking the data
-	bool check = regex_match(checkS, checkData);
+	bool checkData = regex_match(dataString, dataPattern);
 
-	if (check == true) {
+	if (checkData == true) {
 		string temp;
 		//Extract the value we don't need
 		getline(data, temp, '=');
