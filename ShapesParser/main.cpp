@@ -4,15 +4,16 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 #include "IShape.h"
 #include "Object.h"
 #include "IParser.h"
 #include "SquareParser.h"
 #include "RectangleParser.h"
 #include "CircleParser.h"
+#include "TriangleParser.h"
 #include "ParserFactory.h"
 #include "IShapeTextDataProvider.h"
-#include <algorithm>
 
 using std::cin, std::cout, std::endl, std::exception;
 
@@ -28,7 +29,7 @@ int main()
 	factory.registerWith("Square", new SquareParser());
 	factory.registerWith("Rectangle", new RectangleParser());
 	factory.registerWith("Circle", new CircleParser());
-
+	factory.registerWith("Triangle", new TriangleParser());
 	//Read file
 	string fileName;
 	getline(cin, fileName);

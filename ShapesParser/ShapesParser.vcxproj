@@ -153,6 +153,8 @@
     <ClCompile Include="RectangleParser.cpp" />
     <ClCompile Include="Square.cpp" />
     <ClCompile Include="SquareParser.cpp" />
+    <ClCompile Include="Triangle.cpp" />
+    <ClCompile Include="TriangleParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="shapes.txt" />
@@ -169,6 +171,8 @@
     <ClInclude Include="RectangleParser.h" />
     <ClInclude Include="Square.h" />
     <ClInclude Include="SquareParser.h" />
+    <ClInclude Include="Triangle.h" />
+    <ClInclude Include="TriangleParser.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
