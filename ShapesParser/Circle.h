@@ -1,7 +1,8 @@
 #pragma once
 #include "IShape.h"
 #include <iomanip>
-
+#include <sstream>
+#include <string>
 using std::left, std::setw, std::fixed, std::setprecision;
 
 class Circle :public IShape {
