@@ -144,6 +144,8 @@
   <ItemGroup>
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="CircleParser.cpp" />
+    <ClCompile Include="Ellipse.cpp" />
+    <ClCompile Include="EllipseParser.cpp" />
     <ClCompile Include="IParser.cpp" />
     <ClCompile Include="IShape.cpp" />
     <ClCompile Include="IShapeTextDataProvider.cpp" />
@@ -162,6 +164,8 @@
   <ItemGroup>
     <ClInclude Include="Circle.h" />
     <ClInclude Include="CircleParser.h" />
+    <ClInclude Include="Ellipse.h" />
+    <ClInclude Include="EllipseParser.h" />
     <ClInclude Include="IShapeTextDataProvider.h" />
     <ClInclude Include="ParserFactory.h" />
     <ClInclude Include="IParser.h" />
