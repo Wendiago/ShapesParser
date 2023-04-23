@@ -7,8 +7,12 @@
 //Pattern: "Circle: r=5"
 IShape* CircleParser::parse(stringstream data)
 {
+	regex checkData("\\w+(\\s|)=(\\s|)(\\d+|\\d+.|\\d+.\\d+)");
 	double radius = 0.0;
 
+	bool check = regex_match(data, checkData);
+
+	//Extract the value we don't need
 	string temp;
 	getline(data, temp, '=');
 
