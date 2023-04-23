@@ -14,8 +14,9 @@
 #include "IShapeTextDataProvider.h"
 #include <algorithm>
 
-using std::cin, std::cout, std::endl;
+using std::cin, std::cout, std::endl, std::exception;
 
+class IShape;
 bool compareShapeArea(const IShape* a, const IShape* b) {
 	return a->area() < b->area();
 }
@@ -33,13 +34,19 @@ int main()
 	getline(cin, fileName);
 
 	IShapeTextDataProvider reader;
-	auto shapes = reader.read(fileName, factory);
+	try
+	{
+		auto shapes = reader.read(fileName, factory);
+		cout << shapes.size() << " shapes found" << endl;
 
-	cout << shapes.size() << " shapes found" << endl;
-	
-	sort(shapes.begin(), shapes.end(), compareShapeArea);
+		sort(shapes.begin(), shapes.end(), compareShapeArea);
 
-	for (auto s : shapes) {
-		cout << s << endl;
+		for (auto s : shapes) {
+			cout << s << endl;
+		}
+	}
+	catch (exception ex)
+	{
+		cout << ex.what() << endl;
 	}
 }
