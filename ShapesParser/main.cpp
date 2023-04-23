@@ -10,6 +10,7 @@
 #include "SquareParser.h"
 #include "RectangleParser.h"
 #include "CircleParser.h"
+#include "EllipseParser.h"
 #include "ParserFactory.h"
 #include "IShapeTextDataProvider.h"
 #include <algorithm>
@@ -28,6 +29,7 @@ int main()
 	factory.registerWith("Square", new SquareParser());
 	factory.registerWith("Rectangle", new RectangleParser());
 	factory.registerWith("Circle", new CircleParser());
+	factory.registerWith("Ellipse", new EllipseParser());
 
 	//Read file
 	string fileName;
