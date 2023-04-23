@@ -46,9 +46,26 @@ double Ellipse::perimeter() const
 }
 
 void Ellipse::doPrint(ostream& out) const {
+	stringstream ss;
+	ss << fixed << setprecision(2) << _major_axis;
+	string str_major = ss.str();
+
+	ss.str("");
+	ss << fixed << setprecision(2) << _minor_axis;
+	string str_minor = ss.str();
+
+	ss.str("");
+	ss << fixed << setprecision(1) << this->perimeter();
+	string str_peri = ss.str();
+
+	ss.str("");
+	ss << fixed << setprecision(2) << this->area();
+	string str_area = ss.str();
+
+
 	out << left << setw(15) << this->type()
-		<< left << setw(10) << " | Major Axis = " << this->_major_axis << ", Minor Axis = " << this->_minor_axis
-		<< left << setw(10) << " | Perimeter = " << fixed << setprecision(1) << this->perimeter()
-		<< left << setw(10) << " | Area = " << fixed << setprecision(2) << this->area()
+		<< left << setw(35) << " | Major Axis = " + str_major + ", Minor Axis = " << str_minor
+		<< left << setw(20) << " | Perimeter = " + str_peri
+		<< left << setw(16) << " | Area = " + str_area
 		<< " | ";
 }
