@@ -31,4 +31,10 @@ double Circle::perimeter() const
 	return 2*pi*_radius;
 }
 
-
+void Circle::doPrint(ostream& out) const{
+	out << left << setw(15) << this->type()
+		<< left << setw(10) << " | Radius = " << this->_radius
+		<< left << setw(10) << " | Perimeter = " << fixed << setprecision(1) << this->perimeter()
+		<< left << setw(10) << " | Area = " << fixed << setprecision(2) << this->area()
+		<< " | ";
+}

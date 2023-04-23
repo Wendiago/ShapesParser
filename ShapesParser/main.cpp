@@ -11,7 +11,15 @@
 #include "RectangleParser.h"
 #include "CircleParser.h"
 #include "ParserFactory.h"
-using namespace std;
+#include "IShapeTextDataProvider.h"
+#include <algorithm>
+
+using std::cin, std::cout, std::endl, std::exception;
+
+class IShape;
+bool compareShapeArea(const IShape* a, const IShape* b) {
+	return a->area() < b->area();
+}
 
 int main()
 {
@@ -25,45 +33,20 @@ int main()
 	string fileName;
 	getline(cin, fileName);
 
-	vector<IShape*> shapes;
-
-	ifstream reader;
-	reader.open(fileName, ios::in);
-	if (reader.good())
+	IShapeTextDataProvider reader;
+	try
 	{
-		//Get number of Shapes
-		string numOfShape;
-		getline(reader, numOfShape);
-		int num = stoi(numOfShape);
+		auto shapes = reader.read(fileName, factory);
+		cout << shapes.size() << " shapes found" << endl;
 
-		for (int i = 0; i < num; i++)
-		{
-			string line;
-			getline(reader, line);
-			stringstream ss(line);
+		sort(shapes.begin(), shapes.end(), compareShapeArea);
 
-			//Get type of shapes
-			string type;
-			getline(ss, type, ':');
-
-			//Get data
-			string data;
-			getline(ss, data);
-
-			//Select parser based on type
-			IParser* parser = factory.select(type);
-			if (parser != nullptr)
-			{
-				IShape* shape = parser->parse((stringstream)data); //Parse data to the corresponding parser, return the shape
-				shapes.push_back(shape); //Push the shape to the list
-			}			
+		for (auto s : shapes) {
+			cout << s << endl;
 		}
-		
-		reader.close();
 	}
-	cout << shapes.size() << " shapes found" << endl;
-	for (auto s : shapes)
+	catch (exception ex)
 	{
-		cout << s->type() << ", Area: " << s->area() << ", Perimeter: " << s->perimeter() << endl;
+		cout << ex.what() << endl;
 	}
 }

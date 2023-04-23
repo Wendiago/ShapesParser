@@ -4,6 +4,8 @@
 #include "IParser.h"
 #include <map>
 
+using std::map;
+
 class ParserFactory : public Object {
 private:
 	map<string, IParser*> _prototypes;

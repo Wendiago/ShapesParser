@@ -1,6 +1,8 @@
 #pragma once
 #include "IShape.h"
-using namespace std;
+#include <iomanip>
+
+using std::left, std::setw, std::fixed, std::setprecision;
 
 class Rectangle :public IShape {
 private:
@@ -19,4 +21,6 @@ public:
 public:
 	double area() const override;
 	double perimeter() const override;
+public:
+	void doPrint(ostream&) const override;
 };

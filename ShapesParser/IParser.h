@@ -1,6 +1,9 @@
 #pragma once
 #include "Object.h"
 #include "IShape.h"
+#include "sstream"
+
+using std::stringstream;
 
 class IParser :public Object {
 public:

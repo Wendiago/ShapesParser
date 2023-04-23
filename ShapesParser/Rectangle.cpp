@@ -41,4 +41,10 @@ double Rectangle::perimeter() const
 	return (_width+_height)*2;
 }
 
-
+void Rectangle ::doPrint(ostream& out) const{
+	out << left << setw(15) << this->type()
+		<< left << setw(10) << " | Height = " << this->_height << ", Width = " << this->_width
+		<< left << setw(10) << " | Perimeter = " << fixed << setprecision(1) << this->perimeter()
+		<< left << setw(10) << " | Area = " << fixed << setprecision(2) << this->area()
+		<< " | ";
+}
