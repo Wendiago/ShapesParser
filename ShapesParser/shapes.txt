@@ -1,4 +1,5 @@
-10
+11
+Triangle: a=3, b=4, c=5
 Square: a=12
 Circle: r=17
 Square: a=7

@@ -4,6 +4,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 #include "IShape.h"
 #include "Object.h"
 #include "IParser.h"
@@ -11,9 +12,9 @@
 #include "RectangleParser.h"
 #include "CircleParser.h"
 #include "EllipseParser.h"
+#include "TriangleParser.h"
 #include "ParserFactory.h"
 #include "IShapeTextDataProvider.h"
-#include <algorithm>
 
 using std::cin, std::cout, std::endl, std::exception;
 
@@ -30,7 +31,7 @@ int main()
 	factory.registerWith("Rectangle", new RectangleParser());
 	factory.registerWith("Circle", new CircleParser());
 	factory.registerWith("Ellipse", new EllipseParser());
-
+	factory.registerWith("Triangle", new TriangleParser());
 	//Read file
 	string fileName;
 	getline(cin, fileName);
