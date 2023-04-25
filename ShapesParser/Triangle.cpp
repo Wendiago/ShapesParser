@@ -81,8 +81,8 @@ void Triangle::doPrint(ostream& out) const
 	ss << fixed << setprecision(2) << this->area();
 	string str_area = ss.str();
 
-	out << left << setw(15) << this->type()
-		<< left << setw(35) << " | a = " + str_a + ", b = " + str_b + ", c = " + str_c
+	out << left << setw(15) << " | " + this->type()
+		<< left << setw(40) << " | a = " + str_a + ", b = " + str_b + ", c = " + str_c
 		<< left << setw(20) << " | Perimeter = " + str_peri
 		<< left << setw(16) << " | Area = " + str_area
 		<< " | ";

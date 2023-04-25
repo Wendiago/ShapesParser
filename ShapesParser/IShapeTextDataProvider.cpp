@@ -1,5 +1,15 @@
 #include "IShapeTextDataProvider.h"
 
+IShapeTextDataProvider::IShapeTextDataProvider()
+{
+	_numberOfShape = 0;
+}
+
+int IShapeTextDataProvider::numberOfShape() const
+{
+	return _numberOfShape;
+}
+
 vector<IShape*> IShapeTextDataProvider::read(string input, ParserFactory factory) {
 	ifstream reader;
 	reader.open(input, ios::in);
@@ -10,9 +20,9 @@ vector<IShape*> IShapeTextDataProvider::read(string input, ParserFactory factory
 		//Get number of Shapes
 		string numOfShape;
 		getline(reader, numOfShape);
-		int num = stoi(numOfShape);
-
-		for (int i = 0; i < num; i++)
+		_numberOfShape = stoi(numOfShape);
+		
+		for (int i = 0; i < _numberOfShape; i++)
 		{
 			string line;
 			getline(reader, line);
@@ -37,8 +47,11 @@ vector<IShape*> IShapeTextDataProvider::read(string input, ParserFactory factory
 				}
 			}
 		}
-
 		reader.close();
+	}
+	else
+	{
+		throw exception("Invalid file name");
 	}
 
 	return shapes;
