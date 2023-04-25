@@ -4,7 +4,7 @@
 // Pattern: "Rectangle: w=3, h=4"
 IShape* RectangleParser::parse(stringstream data)
 {
-	regex dataPattern("(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+.|\\d+.\\d+),(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+.|\\d+.\\d+)");
+	regex dataPattern("(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+\\.|\\d+\\.\\d+),(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+\\.|\\d+\\.\\d+)");
 	double weight = 0.0;
 	double height = 0.0; 	
 	string dataString = data.str();
