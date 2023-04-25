@@ -4,7 +4,7 @@
 //Pattern: "Circle: r=5"
 IShape* CircleParser::parse(stringstream data)
 {
-	regex dataPattern("(\\s+|)\\w+(\\s|)=(\\s|)(\\d+|\\d+.|\\d+.\\d+)");
+	regex dataPattern("(\\s+|)\\w+(\\s|)=(\\s|)(\\d+|\\d+\\.|\\d+\\.\\d+)");
 	double radius = 0.0;
 	string dataString = data.str();
 	IShape* circle = nullptr;
