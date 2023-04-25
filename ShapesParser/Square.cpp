@@ -46,8 +46,8 @@ void Square::doPrint(ostream& out) const{
 	ss << fixed << setprecision(2) << this->area();
 	string str_area = ss.str();
 
-	out << left << setw(15) << this->type()
-		<< left << setw(35) << " | Edge = " + str_edge
+	out << left << setw(15) << " | " + this->type()
+		<< left << setw(40) << " | Edge = " + str_edge
 		<< left << setw(20) << " | Perimeter = " + str_peri
 		<< left << setw(16) << " | Area = " + str_area
 		<< " | ";

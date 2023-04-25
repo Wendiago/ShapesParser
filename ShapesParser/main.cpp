@@ -34,19 +34,30 @@ int main()
 	factory.registerWith("Triangle", new TriangleParser());
 	//Read file
 	string fileName;
+	cout << "Enter file name: ";
 	getline(cin, fileName);
 
 	IShapeTextDataProvider reader;
 	try
 	{
 		auto shapes = reader.read(fileName, factory);
-		cout << shapes.size() << " shapes found" << endl;
 
+		// 
+		cout << "Reading " << fileName << "..." << endl;
+		cout << "Found " << shapes.size()  << "/" << reader.numberOfShape() << " shapes" << endl;
+		cout << endl;
+
+		//
 		sort(shapes.begin(), shapes.end(), compareShapeArea);
 
-		for (auto s : shapes) {
-			cout << s << endl;
+		for (int i = 0; i < shapes.size(); i++) 
+		{
+			string index = to_string(i + 1);
+			cout << left << setw(4) << "| " + index << shapes[i] << endl;
 		}
+
+		//
+		cout << endl << "Cannot read " << reader.numberOfShape() - shapes.size() << " shapes" << endl;
 	}
 	catch (exception ex)
 	{

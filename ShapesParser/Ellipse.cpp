@@ -63,8 +63,8 @@ void Ellipse::doPrint(ostream& out) const {
 	string str_area = ss.str();
 
 
-	out << left << setw(15) << this->type()
-		<< left << setw(35) << " | Major Axis = " + str_major + ", Minor Axis = " << str_minor
+	out << left << setw(15) << " | " + this->type()
+		<< left << setw(40) << " | Major Axis = " + str_major + ", Minor Axis = " + str_minor
 		<< left << setw(20) << " | Perimeter = " + str_peri
 		<< left << setw(16) << " | Area = " + str_area
 		<< " | ";
