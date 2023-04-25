@@ -4,7 +4,7 @@
 // Pattern: "Rectangle: w=3, h=4"
 IShape* EllipseParser::parse(stringstream data)
 {
-	regex dataPattern("(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+.|\\d+.\\d+),(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+.|\\d+.\\d+)");
+	regex dataPattern("(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+\\.|\\d+\\.\\d+),(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+\\.|\\d+\\.\\d+)");
 	double major_axis = 0.0;
 	double minor_axis = 0.0;
 	string dataString = data.str();
