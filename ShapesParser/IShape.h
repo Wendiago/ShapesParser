@@ -1,6 +1,8 @@
 #pragma once
 #include "Object.h"
+#include <memory>
 
+using std::shared_ptr;
 using std::ostream;
 
 class IShape :public Object {
@@ -11,5 +13,5 @@ public:
 	string toString();
 protected:
 	virtual void doPrint(ostream&) const = 0;
-	friend ostream& operator<<(ostream&, IShape*);
+	friend ostream& operator<<(ostream&, shared_ptr<IShape>);
 };

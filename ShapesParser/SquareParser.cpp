@@ -1,12 +1,13 @@
 #include "SquareParser.h"
 #include "Square.h"
 
-IShape* SquareParser::parse(stringstream data)
+shared_ptr<IShape> SquareParser::parse(stringstream data)
 {
 	regex dataPattern("(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+\\.|\\d+\\.\\d+)"); 
 	double edge = 0.0;
 	string dataString = data.str();
-	IShape* square = nullptr;
+	shared_ptr<IShape> square(new Square());
+	square = nullptr;
 
 	//checking the data
 	bool checkData = regex_match(dataString, dataPattern);
@@ -19,7 +20,7 @@ IShape* SquareParser::parse(stringstream data)
 		getline(data, temp, ',');
 		edge = stod(temp);
 
-		square = new Square(edge);
+		square.reset(new Square(edge));
 	}
 
 	return square;

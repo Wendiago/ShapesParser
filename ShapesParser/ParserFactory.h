@@ -8,9 +8,9 @@ using std::map;
 
 class ParserFactory : public Object {
 private:
-	map<string, IParser*> _prototypes;
+	map<string, shared_ptr<IParser>> _prototypes;
 public:
-	void registerWith(string, IParser*);
-	IParser* select(string type);
+	void registerWith(string, shared_ptr<IParser>);
+	shared_ptr<IParser> select(string type);
 	string toString();
 };

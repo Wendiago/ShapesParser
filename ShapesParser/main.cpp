@@ -19,19 +19,27 @@
 using std::cin, std::cout, std::endl, std::exception;
 
 class IShape;
-bool compareShapeArea(const IShape* a, const IShape* b) {
+bool compareShapeArea(const shared_ptr<IShape> a, const shared_ptr<IShape> b) {
 	return a->area() < b->area();
 }
 
 int main()
 {
+	//create smart pointers of parser
+	shared_ptr<IParser> squareParser(new SquareParser());
+	shared_ptr<IParser> rectangleParser(new RectangleParser());
+	shared_ptr<IParser> circleParser(new CircleParser());
+	shared_ptr<IParser> ellipseParser(new EllipseParser());
+	shared_ptr<IParser> triangleParser(new TriangleParser());
+
 	//Register parser of shapes
 	ParserFactory factory;
-	factory.registerWith("Square", new SquareParser());
-	factory.registerWith("Rectangle", new RectangleParser());
-	factory.registerWith("Circle", new CircleParser());
-	factory.registerWith("Ellipse", new EllipseParser());
-	factory.registerWith("Triangle", new TriangleParser());
+	factory.registerWith("Square", squareParser);
+	factory.registerWith("Rectangle", rectangleParser);
+	factory.registerWith("Circle", circleParser);
+	factory.registerWith("Ellipse", ellipseParser);
+	factory.registerWith("Triangle", triangleParser);
+
 	//Read file
 	string fileName;
 	cout << "Enter file name: ";

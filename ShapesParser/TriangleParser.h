@@ -8,7 +8,7 @@ using namespace std;
 
 class TriangleParser :public IParser {
 public:
-	IShape* parse(stringstream);
+	shared_ptr<IShape> parse(stringstream);
 public:
 	static bool isTriangle(double, double, double);
 };

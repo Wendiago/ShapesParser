@@ -1,13 +1,14 @@
 #include "TriangleParser.h"
 
 // " a=3, b=6, c=9"
-IShape* TriangleParser::parse(stringstream data)
+shared_ptr<IShape> TriangleParser::parse(stringstream data)
 {
 	regex dataPat("(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+\\.|\\d+\\.\\d+),(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+\\.|\\d+\\.\\d+),(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+\\.|\\d+\\.\\d+)");
 	double a = 0.0;
 	double b = 0.0;
 	double c = 0.0;
-	IShape* triangle = nullptr;
+	shared_ptr<IShape> triangle(new Triangle());
+	triangle = nullptr;
 
 	string str_data = data.str(); //Rebuild string data from stringstream to check pattern
 	if (regex_match(str_data, dataPat))
@@ -31,7 +32,7 @@ IShape* TriangleParser::parse(stringstream data)
 		//Check if 3 edges made up a Triangle or not 
 		if (isTriangle(a, b, c))
 		{
-			triangle = new Triangle(a, b, c);
+			triangle.reset(new Triangle(a, b, c));
 		}
 	}
 	return triangle;
