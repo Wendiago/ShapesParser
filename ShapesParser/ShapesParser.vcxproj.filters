@@ -45,15 +45,6 @@
     <ClCompile Include="ParserFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="IShapeTextDataProvider.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Ellipse.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EllipseParser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="shapes.txt">
@@ -89,15 +80,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ParserFactory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IShapeTextDataProvider.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Ellipse.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EllipseParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

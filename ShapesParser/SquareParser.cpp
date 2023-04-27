@@ -3,7 +3,7 @@
 
 shared_ptr<IShape> SquareParser::parse(stringstream data)
 {
-	regex dataPattern("(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+.|\\d+.\\d+)"); 
+	regex dataPattern("(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+\\.|\\d+\\.\\d+)"); 
 	double edge = 0.0;
 	string dataString = data.str();
 	shared_ptr<IShape> square(new Square());

@@ -1,8 +1,8 @@
 #pragma once
 #include "IShape.h"
 #include <iomanip>
-
-using std::left, std::setw, std::fixed, std::setprecision;
+#include <sstream>
+using std::left, std::setw, std::fixed, std::setprecision, std::stringstream;
 
 class Ellipse :public IShape {
 public:

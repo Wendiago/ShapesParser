@@ -60,8 +60,8 @@ void Rectangle ::doPrint(ostream& out) const{
 	ss << fixed << setprecision(2) << this->area();
 	string str_area = ss.str();
 
-	out << left << setw(15) << this->type()
-		<< left << setw(35) << " | Height =  " + str_height + ", Width = " + str_width
+	out << left << setw(15) << " | " + this->type()
+		<< left << setw(40) << " | Height =  " + str_height + ", Width = " + str_width
 		<< left << setw(20) << " | Perimeter = " + str_peri
 		<< left << setw(16) << " | Area = " + str_area
 		<< " | ";

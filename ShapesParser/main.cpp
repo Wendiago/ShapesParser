@@ -4,6 +4,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 #include "IShape.h"
 #include "Object.h"
 #include "IParser.h"
@@ -11,13 +12,11 @@
 #include "RectangleParser.h"
 #include "CircleParser.h"
 #include "EllipseParser.h"
+#include "TriangleParser.h"
 #include "ParserFactory.h"
 #include "IShapeTextDataProvider.h"
-#include <algorithm>
 
-using std::cin, std::cout, std::endl;
-using std::make_shared;
-using std::exception;
+using std::cin, std::cout, std::endl, std::exception;
 
 class IShape;
 bool compareShapeArea(const shared_ptr<IShape> a, const shared_ptr<IShape> b) {
@@ -41,19 +40,30 @@ int main()
 
 	//Read file
 	string fileName;
+	cout << "Enter file name: ";
 	getline(cin, fileName);
 
 	IShapeTextDataProvider reader;
 	try
 	{
 		auto shapes = reader.read(fileName, factory);
-		cout << shapes.size() << " shapes found" << endl;
 
+		// 
+		cout << "Reading " << fileName << "..." << endl;
+		cout << "Found " << shapes.size()  << "/" << reader.numberOfShape() << " shapes" << endl;
+		cout << endl;
+
+		//
 		sort(shapes.begin(), shapes.end(), compareShapeArea);
 
-		for (auto s : shapes) {
-			cout << s << endl;
+		for (int i = 0; i < shapes.size(); i++) 
+		{
+			string index = to_string(i + 1);
+			cout << left << setw(4) << "| " + index << shapes[i] << endl;
 		}
+
+		//
+		cout << endl << "Cannot read " << reader.numberOfShape() - shapes.size() << " shapes" << endl;
 	}
 	catch (exception ex)
 	{
