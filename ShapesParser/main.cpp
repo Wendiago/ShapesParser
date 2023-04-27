@@ -1,10 +1,3 @@
-#include <iostream>
-#include <exception>
-#include <string>
-#include <vector>
-#include <fstream>
-#include <sstream>
-#include <algorithm>
 #include "IShape.h"
 #include "Object.h"
 #include "IParser.h"
@@ -15,13 +8,7 @@
 #include "TriangleParser.h"
 #include "ParserFactory.h"
 #include "IShapeTextDataProvider.h"
-
-using std::cin, std::cout, std::endl, std::exception;
-
-class IShape;
-bool compareShapeArea(const shared_ptr<IShape> a, const shared_ptr<IShape> b) {
-	return a->area() < b->area();
-}
+#include "VectorIShapes.h"
 
 int main()
 {
@@ -48,21 +35,15 @@ int main()
 	IShapeTextDataProvider reader;
 	try
 	{
-		auto shapes = reader.read(fileName, factory);
+		VectorIShapes shapes;
+		shapes.getShapes(reader, factory, fileName);
 
 		// 
 		cout << "Reading " << fileName << "..." << endl;
 		cout << "Found " << shapes.size()  << "/" << reader.numberOfShape() << " shapes" << endl;
 		cout << endl;
 
-		//
-		sort(shapes.begin(), shapes.end(), compareShapeArea);
-
-		for (int i = 0; i < shapes.size(); i++) 
-		{
-			string index = to_string(i + 1);
-			cout << left << setw(4) << "| " + index << shapes[i] << endl;
-		}
+		shapes.display();
 
 		//
 		cout << endl << "Cannot read " << reader.numberOfShape() - shapes.size() << " shapes" << endl;
