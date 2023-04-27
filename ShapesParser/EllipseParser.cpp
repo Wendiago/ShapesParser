@@ -2,13 +2,14 @@
 #include "Ellipse.h"
 
 // Pattern: "Rectangle: w=3, h=4"
-IShape* EllipseParser::parse(stringstream data)
+shared_ptr<IShape> EllipseParser::parse(stringstream data)
 {
 	regex dataPattern("(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+.|\\d+.\\d+),(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+.|\\d+.\\d+)");
 	double major_axis = 0.0;
 	double minor_axis = 0.0;
 	string dataString = data.str();
-	IShape* ellipse = nullptr;
+	shared_ptr<IShape> ellipse(new Ellipse());
+	ellipse = nullptr;
 
 	//checking the data
 	bool checkData = regex_match(dataString, dataPattern);
@@ -27,7 +28,7 @@ IShape* EllipseParser::parse(stringstream data)
 		getline(data, temp, ',');
 		minor_axis = stod(temp);
 
-		ellipse = new Ellipse(major_axis, minor_axis);
+		ellipse.reset(new Ellipse(major_axis, minor_axis));
 	}
 
 	return ellipse;

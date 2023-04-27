@@ -1,9 +1,9 @@
 #include "IShapeTextDataProvider.h"
 
-vector<IShape*> IShapeTextDataProvider::read(string input, ParserFactory factory) {
+vector<shared_ptr<IShape>> IShapeTextDataProvider::read(string input, ParserFactory factory) {
 	ifstream reader;
 	reader.open(input, ios::in);
-	vector<IShape*> shapes;
+	vector<shared_ptr<IShape>> shapes;
 
 	if (reader.good())
 	{
@@ -27,10 +27,10 @@ vector<IShape*> IShapeTextDataProvider::read(string input, ParserFactory factory
 			getline(ss, data);
 
 			//Select parser based on type
-			IParser* parser = factory.select(type);
+			shared_ptr<IParser> parser = factory.select(type);
 
 			if (parser != nullptr){
-				IShape* shape = parser->parse((stringstream)data); //Parse data to the corresponding parser, return the shape
+				shared_ptr<IShape> shape = parser->parse((stringstream)data); //Parse data to the corresponding parser, return the shape
 
 				if (shape != nullptr) {
 					shapes.push_back(shape); //Push the shape to the list

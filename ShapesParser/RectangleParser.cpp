@@ -2,13 +2,14 @@
 #include "Rectangle.h"
 
 // Pattern: "Rectangle: w=3, h=4"
-IShape* RectangleParser::parse(stringstream data)
+shared_ptr<IShape> RectangleParser::parse(stringstream data)
 {
 	regex dataPattern("(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+.|\\d+.\\d+),(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+.|\\d+.\\d+)");
 	double weight = 0.0;
 	double height = 0.0; 	
 	string dataString = data.str();
-	IShape* rectangle = nullptr;
+	shared_ptr<IShape> rectangle(new Rectangle());
+	rectangle = nullptr;
 	
 	//checking the data
 	bool checkData = regex_match(dataString, dataPattern);
@@ -27,7 +28,7 @@ IShape* RectangleParser::parse(stringstream data)
 		getline(data, temp, ',');
 		height = stod(temp);
 
-		rectangle = new Rectangle(weight, height);
+		rectangle.reset(new Rectangle(weight, height));
 	}
 	
 	return rectangle;

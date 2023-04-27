@@ -9,5 +9,5 @@ using std::regex, std::regex_match;
 
 class RectangleParser :public IParser {
 public:
-	IShape* parse(stringstream);
+	shared_ptr<IShape> parse(stringstream);
 };

@@ -11,5 +11,5 @@ using std::ifstream, std::ios;
 
 class IShapeTextDataProvider {
 public:
-    static vector<IShape*> read(string, ParserFactory);
+    static vector<shared_ptr<IShape>> read(string, ParserFactory);
 };

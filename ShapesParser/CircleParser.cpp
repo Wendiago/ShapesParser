@@ -2,12 +2,13 @@
 #include "Circle.h"
 
 //Pattern: "Circle: r=5"
-IShape* CircleParser::parse(stringstream data)
+shared_ptr<IShape> CircleParser::parse(stringstream data)
 {
 	regex dataPattern("(\\s+|)\\w+(\\s|)=(\\s|)(\\d+|\\d+.|\\d+.\\d+)");
 	double radius = 0.0;
 	string dataString = data.str();
-	IShape* circle = nullptr;
+	shared_ptr<IShape> circle(new Circle());
+	circle = nullptr;
 
 	//checking the data
 	bool checkData = regex_match(dataString, dataPattern);
@@ -20,7 +21,7 @@ IShape* CircleParser::parse(stringstream data)
 		getline(data, temp, ',');
 		radius = stod(temp);
 
-		circle = new Circle(radius);
+		circle.reset(new Circle(radius));
 	}
 	
 	return circle;
