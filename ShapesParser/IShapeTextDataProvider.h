@@ -20,5 +20,5 @@ public:
     IShapeTextDataProvider();
     int numberOfShape() const;
 public:
-    static vector<shared_ptr<IShape>> read(string, ParserFactory);
+    vector<shared_ptr<IShape>> read(string, ParserFactory) noexcept(false);
 };

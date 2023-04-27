@@ -30,6 +30,7 @@ int main()
 	shared_ptr<IParser> rectangleParser(new RectangleParser());
 	shared_ptr<IParser> circleParser(new CircleParser());
 	shared_ptr<IParser> ellipseParser(new EllipseParser());
+	shared_ptr<IParser> triangleParser(new TriangleParser());
 
 	//Register parser of shapes
 	ParserFactory factory;
@@ -37,6 +38,7 @@ int main()
 	factory.registerWith("Rectangle", rectangleParser);
 	factory.registerWith("Circle", circleParser);
 	factory.registerWith("Ellipse", ellipseParser);
+	factory.registerWith("Triangle", triangleParser);
 
 	//Read file
 	string fileName;

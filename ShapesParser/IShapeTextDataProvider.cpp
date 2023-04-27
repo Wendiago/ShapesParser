@@ -10,7 +10,6 @@ int IShapeTextDataProvider::numberOfShape() const
 	return _numberOfShape;
 }
 
-vector<IShape*> IShapeTextDataProvider::read(string input, ParserFactory factory) {
 vector<shared_ptr<IShape>> IShapeTextDataProvider::read(string input, ParserFactory factory) {
 	ifstream reader;
 	reader.open(input, ios::in);
