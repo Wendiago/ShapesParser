@@ -7,5 +7,5 @@ using std::vector;
 
 class VectorIShapes {
 public:
-	vector<*IShape> shapes;
+	vector<IShape*> shapes;
 };
