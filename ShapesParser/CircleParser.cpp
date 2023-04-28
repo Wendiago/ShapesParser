@@ -1,7 +1,11 @@
 #include "CircleParser.h"
 #include "Circle.h"
 
-//Pattern: "Circle: r=5"
+/// <summary>
+/// Check for data validation and parse data of Circle into Cirle object
+/// </summary>
+/// <param name="data"></param>
+/// <returns>Circle object readed from data stream</returns>
 shared_ptr<IShape> CircleParser::parse(stringstream data)
 {
 	regex dataPattern("(\\s+|)\\w+(\\s|)=(\\s|)(\\d+|\\d+\\.|\\d+\\.\\d+)");

@@ -1,7 +1,11 @@
 #include "RectangleParser.h"
 #include "Rectangle.h"
 
-// Pattern: "Rectangle: w=3, h=4"
+/// <summary>
+/// Check for data validation and parse data of a Rectangle into Rectangle object
+/// </summary>
+/// <param name="data"></param>
+/// <returns>Rectangle object readed from data stream</returns>
 shared_ptr<IShape> RectangleParser::parse(stringstream data)
 {
 	regex dataPattern("(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+\\.|\\d+\\.\\d+),(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+\\.|\\d+\\.\\d+)");

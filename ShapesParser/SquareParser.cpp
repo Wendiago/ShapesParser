@@ -1,6 +1,11 @@
 #include "SquareParser.h"
 #include "Square.h"
 
+/// <summary>
+/// Check for data validation and parse data of an Square into Square object
+/// </summary>
+/// <param name="data"></param>
+/// <returns>Square object readed from data stream</returns>
 shared_ptr<IShape> SquareParser::parse(stringstream data)
 {
 	regex dataPattern("(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+\\.|\\d+\\.\\d+)"); 

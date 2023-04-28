@@ -12,7 +12,7 @@
 
 int main()
 {
-	//create smart pointers of parser
+	//Create smart pointers of parser
 	shared_ptr<IParser> squareParser(new SquareParser());
 	shared_ptr<IParser> rectangleParser(new RectangleParser());
 	shared_ptr<IParser> circleParser(new CircleParser());
@@ -35,17 +35,19 @@ int main()
 	IShapeTextDataProvider reader;
 	try
 	{
+		//Create a vector of shapes and read txt file to the vector
 		VectorIShapes shapes;
 		shapes.getShapes(reader, factory, fileName);
 
-		// 
+		//Inform that the file is readed and display number of valid shapes / number of total shapes in txt file
 		cout << "Reading " << fileName << "..." << endl;
 		cout << "Found " << shapes.size()  << "/" << reader.numberOfShape() << " shapes" << endl;
 		cout << endl;
 
+		//Display all information about valid shaped readed from txt file
 		shapes.display();
 
-		//
+		//Display number of invalid shapes from txt file
 		cout << endl << "Cannot read " << reader.numberOfShape() - shapes.size() << " shapes" << endl;
 	}
 	catch (exception ex)
