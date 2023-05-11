@@ -9,6 +9,9 @@
 #include "ParserFactory.h"
 #include "IShapeTextDataProvider.h"
 #include "VectorIShapes.h"
+#include "CirclePrintStrategy.h"
+#include "RectanglePrintStrategy.h"
+#include "IPrintStrategy.h"
 
 int main()
 {
@@ -27,6 +30,7 @@ int main()
 	factory.registerWith("Ellipse", ellipseParser);
 	factory.registerWith("Triangle", triangleParser);
 
+
 	//Read file
 	string fileName;
 	cout << "Enter file name: ";
@@ -36,7 +40,11 @@ int main()
 	try
 	{
 		//Create a vector of shapes and read txt file to the vector
+		shared_ptr<IPrintStrategy> circlePrinter(new CirclePrintStrategy());
+		shared_ptr<IPrintStrategy> rectanglePrinter(new RectanglePrintStrategy());
 		VectorIShapes shapes;
+		shapes.registerWith("Circle", circlePrinter);
+		shapes.registerWith("Rectangle", rectanglePrinter);
 		shapes.getShapes(reader, factory, fileName);
 
 		//Inform that the file is readed and display number of valid shapes / number of total shapes in txt file
@@ -45,7 +53,7 @@ int main()
 		cout << endl;
 
 		//Display all information about valid shaped readed from txt file
-		shapes.display();
+		shapes.display(cout);
 
 		//Display number of invalid shapes from txt file
 		cout << endl << "Cannot read " << reader.numberOfShape() - shapes.size() << " shapes" << endl;
