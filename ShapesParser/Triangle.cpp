@@ -104,38 +104,3 @@ double Triangle::perimeter() const
 {
 	return _a + _b + _c;
 }
-
-/// <summary>
-/// Display Triangle object with type of shape, dimensions, area and circumference, each field separated by "|"
-/// </summary>
-/// <param name="out"></param>
-void Triangle::doPrint(ostream& out) const
-{
-	stringstream ss;
-	ss << fixed << setprecision(2) << _a;
-	string str_a = ss.str();
-
-	ss.str("");
-	ss << fixed << setprecision(2) << _b;
-	string str_b = ss.str();
-
-	ss.str("");
-	ss << fixed << setprecision(2) << _c;
-	string str_c = ss.str();
-
-	ss.str("");
-	ss << fixed << setprecision(1) << this->perimeter();
-	string str_peri = ss.str();
-
-	ss.str("");
-	ss << fixed << setprecision(2) << this->area();
-	string str_area = ss.str();
-
-	out << left << setw(15) << " | " + this->type()
-		<< left << setw(40) << " | a = " + str_a + ", b = " + str_b + ", c = " + str_c
-		<< left << setw(25) << " | Circumference = " + str_peri
-		<< left << setw(16) << " | Area = " + str_area
-		<< " | ";
-}
-
-

@@ -21,6 +21,4 @@ public:
 public:
 	double area() const override;
 	double perimeter() const override;
-public:
-	void doPrint(ostream&) const override;
 };

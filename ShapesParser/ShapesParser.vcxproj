@@ -147,6 +147,7 @@
     <ClCompile Include="CirclePrintStrategy.cpp" />
     <ClCompile Include="Ellipse.cpp" />
     <ClCompile Include="EllipseParser.cpp" />
+    <ClCompile Include="EllipsePrintStrategy.cpp" />
     <ClCompile Include="IParser.cpp" />
     <ClCompile Include="IPrintStrategy.cpp" />
     <ClCompile Include="IShape.cpp" />
@@ -157,9 +158,11 @@
     <ClCompile Include="RectangleParser.cpp" />
     <ClCompile Include="RectanglePrintStrategy.cpp" />
     <ClCompile Include="Square.cpp" />
+    <ClCompile Include="SquarePrintStrategy.cpp" />
     <ClCompile Include="SquareParser.cpp" />
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="TriangleParser.cpp" />
+    <ClCompile Include="TrianglePrintStrategy.cpp" />
     <ClCompile Include="VectorIShapes.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +174,7 @@
     <ClInclude Include="CirclePrintStrategy.h" />
     <ClInclude Include="Ellipse.h" />
     <ClInclude Include="EllipseParser.h" />
+    <ClInclude Include="EllipsePrintStrategy.h" />
     <ClInclude Include="IPrintStrategy.h" />
     <ClInclude Include="IShapeTextDataProvider.h" />
     <ClInclude Include="ParserFactory.h" />
@@ -181,9 +185,11 @@
     <ClInclude Include="RectangleParser.h" />
     <ClInclude Include="RectanglePrintStrategy.h" />
     <ClInclude Include="Square.h" />
+    <ClInclude Include="SquarePrintStrategy.h" />
     <ClInclude Include="SquareParser.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="TriangleParser.h" />
+    <ClInclude Include="TrianglePrintStrategy.h" />
     <ClInclude Include="VectorIShapes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

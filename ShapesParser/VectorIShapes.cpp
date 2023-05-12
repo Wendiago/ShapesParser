@@ -49,7 +49,7 @@ void VectorIShapes::getShapes(IShapeTextDataProvider& reader, ParserFactory fact
 /// <summary>
 /// Sort shapes bases on their area ascendingly
 /// </summary>
-void VectorIShapes::sortShapes()
+void VectorIShapes::sortAreaAscending()
 {
 	sort(_shapes.begin(), _shapes.end(), compareShapeArea);
 }

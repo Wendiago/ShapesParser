@@ -25,6 +25,6 @@ public:
 	int size() const;
 public:
 	void getShapes(IShapeTextDataProvider&, ParserFactory, string);
-	void sortShapes();
+	void sortAreaAscending();
 	void display(ostream&);
 };

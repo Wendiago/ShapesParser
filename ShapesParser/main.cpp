@@ -11,6 +11,9 @@
 #include "VectorIShapes.h"
 #include "CirclePrintStrategy.h"
 #include "RectanglePrintStrategy.h"
+#include "TrianglePrintStrategy.h"
+#include "SquarePrintStrategy.h"
+#include "EllipsePrintStrategy.h"
 #include "IPrintStrategy.h"
 
 int main()
@@ -42,15 +45,25 @@ int main()
 		//Create a vector of shapes and read txt file to the vector
 		shared_ptr<IPrintStrategy> circlePrinter(new CirclePrintStrategy());
 		shared_ptr<IPrintStrategy> rectanglePrinter(new RectanglePrintStrategy());
+		shared_ptr<IPrintStrategy> trianglePrinter(new TrianglePrintStrategy());
+		shared_ptr<IPrintStrategy> squarePrinter(new SquarePrintStrategy());
+		shared_ptr<IPrintStrategy> ellipsePrinter(new EllipsePrintStrategy());
+
 		VectorIShapes shapes;
 		shapes.registerWith("Circle", circlePrinter);
 		shapes.registerWith("Rectangle", rectanglePrinter);
+		shapes.registerWith("Triangle", trianglePrinter);
+		shapes.registerWith("Square", squarePrinter);
+		shapes.registerWith("Ellipse", ellipsePrinter);
 		shapes.getShapes(reader, factory, fileName);
 
 		//Inform that the file is readed and display number of valid shapes / number of total shapes in txt file
 		cout << "Reading " << fileName << "..." << endl;
 		cout << "Found " << shapes.size()  << "/" << reader.numberOfShape() << " shapes" << endl;
 		cout << endl;
+
+		//Sorting all shapes in ascending order of areas
+		shapes.sortAreaAscending();
 
 		//Display all information about valid shaped readed from txt file
 		shapes.display(cout);

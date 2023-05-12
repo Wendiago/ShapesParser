@@ -60,28 +60,3 @@ double Circle::perimeter() const
 {
 	return 2*pi*_radius;
 }
-
-/// <summary>
-/// Display Circle object with type of shape, dimensions, area and circumference, each field separated by "|"
-/// </summary>
-/// <param name="out"></param>
-void Circle::doPrint(ostream& out) const{
-	//Convert to string for printing out
-	stringstream ss;
-	ss << fixed << setprecision(2) << this->_radius;
-	string str_radius = ss.str();
-
-	ss.str("");
-	ss << fixed << setprecision(1) << this->perimeter();
-	string str_peri = ss.str();
-
-	ss.str("");
-	ss << fixed << setprecision(2) << this->area();
-	string str_area = ss.str();
-
-	out << left << setw(15) << " | " + this->type()
-		<< left << setw(40) << " | Radius = " + str_radius
-		<< left << setw(25) << " | Circumference = " + str_peri
-		<< left << setw(16) << " | Area = " + str_area
-		<< " | ";
-}
