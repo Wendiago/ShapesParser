@@ -3,7 +3,7 @@
 #include <iomanip>
 #include <sstream>
 #include <string>
-using std::left, std::setw, std::fixed, std::setprecision;
+using std::left, std::setw, std::fixed, std::setprecision, std::stringstream;
 
 class Circle :public IShape {
 public:

@@ -1,7 +1,11 @@
 #include "EllipseParser.h"
 #include "Ellipse.h"
 
-// Pattern: "Rectangle: w=3, h=4"
+/// <summary>
+/// Check for data validation and parse data of an Ellipse into Ellipse object
+/// </summary>
+/// <param name="data"></param>
+/// <returns>Ellipse object readed from data stream</returns>
 shared_ptr<IShape> EllipseParser::parse(stringstream data)
 {
 	regex dataPattern("(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+\\.|\\d+\\.\\d+),(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+\\.|\\d+\\.\\d+)");

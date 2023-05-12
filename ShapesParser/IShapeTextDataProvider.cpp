@@ -1,15 +1,29 @@
 #include "IShapeTextDataProvider.h"
 
+/// <summary>
+/// Initialize a data provider with 0 shape to read
+/// </summary>
 IShapeTextDataProvider::IShapeTextDataProvider()
 {
 	_numberOfShape = 0;
 }
 
+/// <summary>
+/// Return number of shapes to read
+/// </summary>
+/// <returns></returns>
 int IShapeTextDataProvider::numberOfShape() const
 {
 	return _numberOfShape;
 }
 
+/// <summary>
+/// Read data from an input txt file by getting its shape type, select the corresponding Parser, parse data into a shape
+/// and store the shape into the vector of shapes
+/// </summary>
+/// <param name="input"></param>
+/// <param name="factory"></param>
+/// <returns>a vector of shapes that stores valid shapes readed from input txt file</returns>
 vector<shared_ptr<IShape>> IShapeTextDataProvider::read(string input, ParserFactory factory) {
 	ifstream reader;
 	reader.open(input, ios::in);

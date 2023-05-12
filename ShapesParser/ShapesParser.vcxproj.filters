@@ -63,6 +63,15 @@
     <ClCompile Include="VectorIShapes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="IPrintStrategy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CirclePrintStrategy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RectanglePrintStrategy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="shapes.txt">
@@ -116,6 +125,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="VectorIShapes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IPrintStrategy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CirclePrintStrategy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RectanglePrintStrategy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

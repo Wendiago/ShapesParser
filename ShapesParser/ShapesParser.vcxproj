@@ -144,15 +144,18 @@
   <ItemGroup>
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="CircleParser.cpp" />
+    <ClCompile Include="CirclePrintStrategy.cpp" />
     <ClCompile Include="Ellipse.cpp" />
     <ClCompile Include="EllipseParser.cpp" />
     <ClCompile Include="IParser.cpp" />
+    <ClCompile Include="IPrintStrategy.cpp" />
     <ClCompile Include="IShape.cpp" />
     <ClCompile Include="IShapeTextDataProvider.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ParserFactory.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="RectangleParser.cpp" />
+    <ClCompile Include="RectanglePrintStrategy.cpp" />
     <ClCompile Include="Square.cpp" />
     <ClCompile Include="SquareParser.cpp" />
     <ClCompile Include="Triangle.cpp" />
@@ -165,8 +168,10 @@
   <ItemGroup>
     <ClInclude Include="Circle.h" />
     <ClInclude Include="CircleParser.h" />
+    <ClInclude Include="CirclePrintStrategy.h" />
     <ClInclude Include="Ellipse.h" />
     <ClInclude Include="EllipseParser.h" />
+    <ClInclude Include="IPrintStrategy.h" />
     <ClInclude Include="IShapeTextDataProvider.h" />
     <ClInclude Include="ParserFactory.h" />
     <ClInclude Include="IParser.h" />
@@ -174,6 +179,7 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="RectangleParser.h" />
+    <ClInclude Include="RectanglePrintStrategy.h" />
     <ClInclude Include="Square.h" />
     <ClInclude Include="SquareParser.h" />
     <ClInclude Include="Triangle.h" />

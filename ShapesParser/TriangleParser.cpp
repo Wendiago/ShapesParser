@@ -1,6 +1,10 @@
 #include "TriangleParser.h"
 
-// " a=3, b=6, c=9"
+/// <summary>
+/// Check for data validation and parse data of a Triangle into Triangle object
+/// </summary>
+/// <param name="data"></param>
+/// <returns>Triangle object readed from data stream</returns>
 shared_ptr<IShape> TriangleParser::parse(stringstream data)
 {
 	regex dataPat("(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+\\.|\\d+\\.\\d+),(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+\\.|\\d+\\.\\d+),(\\s+|)\\w+(\\s+|)=(\\s+|)(\\d+|\\d+\\.|\\d+\\.\\d+)");
@@ -38,6 +42,13 @@ shared_ptr<IShape> TriangleParser::parse(stringstream data)
 	return triangle;
 }
 
+/// <summary>
+/// Determine if the triangle is valid using Triangle Inequality Theorem
+/// </summary>
+/// <param name="a"></param>
+/// <param name="b"></param>
+/// <param name="c"></param>
+/// <returns>true if the triangle is valid, else return false</returns>
 bool TriangleParser::isTriangle(double a, double b, double c)
 {
 	if ((a + b) <= c || (a + c) <= b || (b + c) <= a)
