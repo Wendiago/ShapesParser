@@ -11,7 +11,4 @@ public:
 	virtual double perimeter() const = 0;
 	virtual string type() const = 0;
 	string toString();
-protected:
-	virtual void doPrint(ostream&) const = 0;
-	friend ostream& operator<<(ostream&, shared_ptr<IShape>);
 };

@@ -60,28 +60,3 @@ double Square::perimeter() const
 {
 	return _edge*4;
 }
-
-/// <summary>
-/// Display Square object with type of shape, dimensions, area and perimeter, each field separated by "|"
-/// </summary>
-/// <param name="out"></param>
-void Square::doPrint(ostream& out) const{
-	//Convert to string for printing out
-	stringstream ss;
-	ss << fixed << setprecision(2) << this->_edge;
-	string str_edge = ss.str();
-
-	ss.str("");
-	ss << fixed << setprecision(1) << this->perimeter();
-	string str_peri = ss.str();
-
-	ss.str("");
-	ss << fixed << setprecision(2) << this->area();
-	string str_area = ss.str();
-
-	out << left << setw(15) << " | " + this->type()
-		<< left << setw(40) << " | Edge = " + str_edge
-		<< left << setw(25) << " | Perimeter = " + str_peri
-		<< left << setw(16) << " | Area = " + str_area
-		<< " | ";
-}
