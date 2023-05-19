@@ -37,3 +37,9 @@ shared_ptr<IShape> RectangleParser::parse(stringstream data)
 	
 	return rectangle;
 }
+
+shared_ptr<RectangleParser> RectangleParser::getInstance()
+{
+	shared_ptr<RectangleParser> rectangleParser(new RectangleParser());
+	return rectangleParser;
+}

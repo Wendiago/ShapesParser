@@ -18,21 +18,13 @@
 
 int main()
 {
-	//Create smart pointers of parser
-	shared_ptr<IParser> squareParser(new SquareParser());
-	shared_ptr<IParser> rectangleParser(new RectangleParser());
-	shared_ptr<IParser> circleParser(new CircleParser());
-	shared_ptr<IParser> ellipseParser(new EllipseParser());
-	shared_ptr<IParser> triangleParser(new TriangleParser());
-
 	//Register parser of shapes
 	ParserFactory factory;
-	factory.registerWith("Square", squareParser);
-	factory.registerWith("Rectangle", rectangleParser);
-	factory.registerWith("Circle", circleParser);
-	factory.registerWith("Ellipse", ellipseParser);
-	factory.registerWith("Triangle", triangleParser);
-
+	factory.registerWith("Square", SquareParser::getInstance());
+	factory.registerWith("Rectangle", RectangleParser::getInstance());
+	factory.registerWith("Circle", CircleParser::getInstance());
+	factory.registerWith("Ellipse", EllipseParser::getInstance());
+	factory.registerWith("Triangle", TriangleParser::getInstance());
 
 	//Read file
 	string fileName;

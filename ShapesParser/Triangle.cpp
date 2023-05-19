@@ -104,3 +104,19 @@ double Triangle::perimeter() const
 {
 	return _a + _b + _c;
 }
+
+/// <summary>
+/// Determine if the triangle is valid using Triangle Inequality Theorem
+/// </summary>
+/// <param name="a"></param>
+/// <param name="b"></param>
+/// <param name="c"></param>
+/// <returns>true if the triangle is valid, else return false</returns>
+bool Triangle::isTriangle(double a, double b, double c)
+{
+	if ((a + b) <= c || (a + c) <= b || (b + c) <= a)
+	{
+		return false;
+	}
+	return true;
+}

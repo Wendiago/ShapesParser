@@ -34,7 +34,7 @@ shared_ptr<IShape> TriangleParser::parse(stringstream data)
 		c = stod(temp);
 
 		//Check if 3 edges made up a Triangle or not 
-		if (isTriangle(a, b, c))
+		if (Triangle::isTriangle(a, b, c))
 		{
 			triangle.reset(new Triangle(a, b, c));
 		}
@@ -42,18 +42,10 @@ shared_ptr<IShape> TriangleParser::parse(stringstream data)
 	return triangle;
 }
 
-/// <summary>
-/// Determine if the triangle is valid using Triangle Inequality Theorem
-/// </summary>
-/// <param name="a"></param>
-/// <param name="b"></param>
-/// <param name="c"></param>
-/// <returns>true if the triangle is valid, else return false</returns>
-bool TriangleParser::isTriangle(double a, double b, double c)
+shared_ptr<TriangleParser> TriangleParser::getInstance()
 {
-	if ((a + b) <= c || (a + c) <= b || (b + c) <= a)
-	{
-		return false;
-	}
-	return true;
+	shared_ptr<TriangleParser> triangleParser(new TriangleParser());
+	return triangleParser;
 }
+
+
