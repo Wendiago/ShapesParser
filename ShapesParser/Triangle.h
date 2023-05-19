@@ -1,8 +1,11 @@
 #pragma once
 #include "IShape.h"
-#include <sstream>
 #include <iomanip>
-using namespace std;
+#include <sstream>
+#include <string>
+
+using std::left, std::setw, std::fixed, std::setprecision, std::stringstream;
+
 class Triangle :public IShape {
 private:
 	double _a;
@@ -24,4 +27,7 @@ public:
 	double area() const;
 	double perimeter() const;
 	static bool isTriangle(double, double, double);
+public:
+	void simplePrint(ostream& out) const override;
+	void detailedPrint(ostream& out) const override;
 };

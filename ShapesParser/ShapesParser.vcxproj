@@ -144,10 +144,11 @@
   <ItemGroup>
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="CircleParser.cpp" />
-    <ClCompile Include="CirclePrintStrategy.cpp" />
+    <ClCompile Include="DetailedPrintStrategy.cpp" />
+    <ClCompile Include="Diamond.cpp" />
+    <ClCompile Include="DiamondParser.cpp" />
     <ClCompile Include="Ellipse.cpp" />
     <ClCompile Include="EllipseParser.cpp" />
-    <ClCompile Include="EllipsePrintStrategy.cpp" />
     <ClCompile Include="IParser.cpp" />
     <ClCompile Include="IPrintStrategy.cpp" />
     <ClCompile Include="IShape.cpp" />
@@ -156,13 +157,11 @@
     <ClCompile Include="ParserFactory.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="RectangleParser.cpp" />
-    <ClCompile Include="RectanglePrintStrategy.cpp" />
+    <ClCompile Include="SimplePrintStrategy.cpp" />
     <ClCompile Include="Square.cpp" />
-    <ClCompile Include="SquarePrintStrategy.cpp" />
     <ClCompile Include="SquareParser.cpp" />
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="TriangleParser.cpp" />
-    <ClCompile Include="TrianglePrintStrategy.cpp" />
     <ClCompile Include="VectorIShapes.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -171,10 +170,11 @@
   <ItemGroup>
     <ClInclude Include="Circle.h" />
     <ClInclude Include="CircleParser.h" />
-    <ClInclude Include="CirclePrintStrategy.h" />
+    <ClInclude Include="DetailedPrintStrategy.h" />
+    <ClInclude Include="Diamond.h" />
+    <ClInclude Include="DiamondParser.h" />
     <ClInclude Include="Ellipse.h" />
     <ClInclude Include="EllipseParser.h" />
-    <ClInclude Include="EllipsePrintStrategy.h" />
     <ClInclude Include="IPrintStrategy.h" />
     <ClInclude Include="IShapeTextDataProvider.h" />
     <ClInclude Include="ParserFactory.h" />
@@ -183,13 +183,11 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="RectangleParser.h" />
-    <ClInclude Include="RectanglePrintStrategy.h" />
+    <ClInclude Include="SimplePrintStrategy.h" />
     <ClInclude Include="Square.h" />
-    <ClInclude Include="SquarePrintStrategy.h" />
     <ClInclude Include="SquareParser.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="TriangleParser.h" />
-    <ClInclude Include="TrianglePrintStrategy.h" />
     <ClInclude Include="VectorIShapes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

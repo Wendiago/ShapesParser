@@ -20,9 +20,9 @@ Square::~Square(){}
 /// Set edge of a Square object
 /// </summary>
 /// <param name="edge"></param>
-void Square::setEdge(double edge)
+void Square::setEdge(double value)
 {
-	_edge = edge;
+	_edge = value;
 }
 
 /// <summary>
@@ -59,4 +59,30 @@ double Square::area() const
 double Square::perimeter() const
 {
 	return _edge*4;
+}
+
+void Square::simplePrint(ostream& out) const
+{
+	out << this->type() << ": Edge = " << this->edge();
+}
+
+void Square::detailedPrint(ostream& out) const
+{
+	stringstream ss;
+	ss << fixed << setprecision(2) << this->edge();
+	string str_edge = ss.str();
+
+	ss.str("");
+	ss << fixed << setprecision(1) << this->perimeter();
+	string str_peri = ss.str();
+
+	ss.str("");
+	ss << fixed << setprecision(2) << this->area();
+	string str_area = ss.str();
+
+	out << left << setw(15) << " | " + this->type()
+		<< left << setw(40) << " | Edge = " + str_edge
+		<< left << setw(25) << " | Perimeter = " + str_peri
+		<< left << setw(16) << " | Area = " + str_area
+		<< " | ";
 }

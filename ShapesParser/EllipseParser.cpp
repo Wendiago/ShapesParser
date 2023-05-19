@@ -32,7 +32,9 @@ shared_ptr<IShape> EllipseParser::parse(stringstream data)
 		getline(data, temp, ',');
 		minor_axis = stod(temp);
 
-		ellipse.reset(new Ellipse(major_axis, minor_axis));
+		if (major_axis > 0 && minor_axis > 0) {
+			ellipse.reset(new Ellipse(major_axis, minor_axis));
+		}
 	}
 
 	return ellipse;

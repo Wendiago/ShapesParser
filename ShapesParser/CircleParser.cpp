@@ -25,7 +25,9 @@ shared_ptr<IShape> CircleParser::parse(stringstream data)
 		getline(data, temp, ',');
 		radius = stod(temp);
 
-		circle.reset(new Circle(radius));
+		if (radius > 0) {
+			circle.reset(new Circle(radius));
+		}
 	}
 	
 	return circle;

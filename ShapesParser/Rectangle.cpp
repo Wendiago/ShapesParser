@@ -21,9 +21,9 @@ Rectangle::~Rectangle(){}
 /// Set width of Rectangle object
 /// </summary>
 /// <param name="width"></param>
-void Rectangle::setWidth(double width)
+void Rectangle::setWidth(double value)
 {
-	_width = width;
+	_width = value;
 }
 
 /// <summary>
@@ -39,9 +39,9 @@ double Rectangle::width() const
 /// Set height of Reactangle object
 /// </summary>
 /// <param name="height"></param>
-void Rectangle::setHeight(double height)
+void Rectangle::setHeight(double value)
 {
-	_height = height;
+	_height = value;
 }
 
 /// <summary>
@@ -78,4 +78,34 @@ double Rectangle::area() const
 double Rectangle::perimeter() const
 {
 	return (_width+_height)*2;
+}
+
+void Rectangle::simplePrint(ostream& out) const
+{
+	out << this->type() << ": Height = " << this->height() << ", Width = " << this->width();
+}
+
+void Rectangle::detailedPrint(ostream& out) const
+{
+	stringstream ss;
+	ss << fixed << setprecision(2) << this->height();
+	string str_height = ss.str();
+
+	ss.str("");
+	ss << fixed << setprecision(2) << this->width();
+	string str_width = ss.str();
+
+	ss.str("");
+	ss << fixed << setprecision(1) << this->perimeter();
+	string str_peri = ss.str();
+
+	ss.str("");
+	ss << fixed << setprecision(2) << this->area();
+	string str_area = ss.str();
+
+	out << left << setw(15) << " | " + this->type()
+		<< left << setw(40) << " | Height =  " + str_height + ", Width = " + str_width
+		<< left << setw(25) << " | Perimeter = " + str_peri
+		<< left << setw(16) << " | Area = " + str_area
+		<< " | ";
 }

@@ -16,16 +16,6 @@ void VectorIShapes::registerWith(const string& type, shared_ptr<IPrintStrategy> 
 	_strategies.insert({type, printStrategy});
 }
 
-shared_ptr<IPrintStrategy> VectorIShapes::select(string type)
-{
-	shared_ptr<IPrintStrategy> strategy = nullptr;
-	if (_strategies.contains(type))
-	{
-		strategy = _strategies[type];
-	}
-	return strategy;
-}
-
 /// <summary>
 /// Get the number of shapes stored in vector 
 /// </summary>
@@ -55,16 +45,31 @@ void VectorIShapes::sortAreaAscending()
 }
 
 /// <summary>
-/// Display the information of shapes stored in the vector
+/// Display the simple information of shapes stored in the vector
 /// </summary>
-void VectorIShapes::display(ostream& out)
+void VectorIShapes::simpleDisplay(ostream& out)
 {
 	for (int i = 0; i < _shapes.size(); i++)
 	{
 		string index = to_string(i + 1);
-		cout << left << setw(4) << "| " + index;
-		shared_ptr<IPrintStrategy> strategy = select(_shapes[i]->type());
-		strategy->print(*_shapes[i], out);
+		out << index << ". ";
+		shared_ptr<IPrintStrategy> strategy(new SimplePrintStrategy());
+		strategy->doPrint(*_shapes[i], out);
+		out << endl;
+	}
+}
+
+/// <summary>
+/// Display the detailed information of shapes stored in the vector
+/// </summary>
+void VectorIShapes::detailedDisplay(ostream& out)
+{
+	for (int i = 0; i < _shapes.size(); i++)
+	{
+		string index = to_string(i + 1);
+		out << left << setw(4) << "| " + index;
+		shared_ptr<IPrintStrategy> strategy(new DetailedPrintStrategy());
+		strategy->doPrint(*_shapes[i], out);
 		out << endl;
 	}
 }

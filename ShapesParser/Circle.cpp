@@ -20,9 +20,9 @@ Circle::~Circle(){}
 /// Set radius for Circle object
 /// </summary>
 /// <param name="radius"></param>
-void Circle::setRadius(double radius)
+void Circle::setRadius(double value)
 {
-	_radius = radius;
+	_radius = value;
 }
 
 /// <summary>
@@ -59,4 +59,30 @@ double Circle::area() const
 double Circle::perimeter() const
 {
 	return 2*pi*_radius;
+}
+
+void Circle::simplePrint(ostream& out) const
+{
+	out << this->type() << ": Radius = " << this->radius();
+}
+
+void Circle::detailedPrint(ostream& out) const
+{
+	stringstream ss;
+	ss << fixed << setprecision(2) << this->radius();
+	string str_radius = ss.str();
+
+	ss.str("");
+	ss << fixed << setprecision(1) << this->perimeter();
+	string str_peri = ss.str();
+
+	ss.str("");
+	ss << fixed << setprecision(2) << this->area();
+	string str_area = ss.str();
+
+	out << left << setw(15) << " | " + this->type()
+		<< left << setw(40) << " | Radius = " + str_radius
+		<< left << setw(25) << " | Circumference = " + str_peri
+		<< left << setw(16) << " | Area = " + str_area
+		<< " | ";
 }
