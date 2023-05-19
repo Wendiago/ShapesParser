@@ -2,6 +2,8 @@
 #include "IShape.h"
 #include <iomanip>
 #include <sstream>
+#include <string>
+
 using std::left, std::setw, std::fixed, std::setprecision, std::stringstream;
 
 class Rectangle :public IShape {
@@ -21,4 +23,7 @@ public:
 public:
 	double area() const override;
 	double perimeter() const override;
+public:
+	void simplePrint(ostream& out) const override;
+	void detailedPrint(ostream& out) const override;
 };

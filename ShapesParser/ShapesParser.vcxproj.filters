@@ -66,10 +66,16 @@
     <ClCompile Include="IPrintStrategy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CirclePrintStrategy.cpp">
+    <ClCompile Include="DetailedPrintStrategy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RectanglePrintStrategy.cpp">
+    <ClCompile Include="SimplePrintStrategy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Diamond.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DiamondParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -130,10 +136,16 @@
     <ClInclude Include="IPrintStrategy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CirclePrintStrategy.h">
+    <ClInclude Include="SimplePrintStrategy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RectanglePrintStrategy.h">
+    <ClInclude Include="DetailedPrintStrategy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Diamond.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DiamondParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

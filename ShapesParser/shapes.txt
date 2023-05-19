@@ -1,4 +1,4 @@
-12
+13
 Rectangle: w=6, h=13a
 Triangle: a=3, b=4, c=5
 Square: a=12
@@ -11,3 +11,4 @@ Square: a=8
 Rectangle: w=4, h=23
 Ellipse: major=4, minor=3
 Ellipse: Not indentified
+Diamond: p=10, q = 8

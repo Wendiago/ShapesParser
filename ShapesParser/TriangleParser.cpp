@@ -34,7 +34,7 @@ shared_ptr<IShape> TriangleParser::parse(stringstream data)
 		c = stod(temp);
 
 		//Check if 3 edges made up a Triangle or not 
-		if (Triangle::isTriangle(a, b, c))
+		if (a > 0 && b > 0 && c > 0 && Triangle::isTriangle(a, b, c))
 		{
 			triangle.reset(new Triangle(a, b, c));
 		}

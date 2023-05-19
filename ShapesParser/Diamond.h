@@ -6,16 +6,19 @@
 
 using std::left, std::setw, std::fixed, std::setprecision, std::stringstream;
 
-class Square :public IShape {
+class Diamond :public IShape {
 private:
-	double _edge;
+	double _diagonal_p;
+	double _diagonal_q;
 public:
-	Square();
-	Square(double);
-	~Square();
+	Diamond();
+	Diamond(double, double);
+	~Diamond();
 public:
-	void setEdge(double);
-	double edge() const;
+	void setDiagonalP(double);
+	void setDiagonalQ(double);
+	double diagonal_p() const;
+	double diagonal_q() const;
 	string type() const;
 public:
 	double area() const override;

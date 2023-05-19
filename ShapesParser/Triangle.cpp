@@ -27,27 +27,27 @@ Triangle::~Triangle(){}
 /// Set first edge
 /// </summary>
 /// <param name="a"></param>
-void Triangle::set_a(double a)
+void Triangle::set_a(double value)
 {
-	_a = a;
+	_a = value;
 }
 
 /// <summary>
 /// Set second edge
 /// </summary>
 /// <param name="b"></param>
-void Triangle::set_b(double b)
+void Triangle::set_b(double value)
 {
-	_b = b;
+	_b = value;
 }
 
 /// <summary>
 /// Set third edge
 /// </summary>
 /// <param name="c"></param>
-void Triangle::set_c(double c)
+void Triangle::set_c(double value)
 {
-	_c = c;
+	_c = value;
 }
 
 /// <summary>
@@ -119,4 +119,38 @@ bool Triangle::isTriangle(double a, double b, double c)
 		return false;
 	}
 	return true;
+}
+
+void Triangle::simplePrint(ostream& out) const
+{
+	out << this->type() << ": a = " << this->a() << ", b = " << this->b() << ", c = " << this->c();
+}
+
+void Triangle::detailedPrint(ostream& out) const
+{
+	stringstream ss;
+	ss << fixed << setprecision(2) << this->a();
+	string str_a = ss.str();
+
+	ss.str("");
+	ss << fixed << setprecision(2) << this->b();
+	string str_b = ss.str();
+
+	ss.str("");
+	ss << fixed << setprecision(2) << this->c();
+	string str_c = ss.str();
+
+	ss.str("");
+	ss << fixed << setprecision(1) << this->perimeter();
+	string str_peri = ss.str();
+
+	ss.str("");
+	ss << fixed << setprecision(2) << this->area();
+	string str_area = ss.str();
+
+	out << left << setw(15) << " | " + this->type()
+		<< left << setw(40) << " | a = " + str_a + ", b = " + str_b + ", c = " + str_c
+		<< left << setw(25) << " | Circumference = " + str_peri
+		<< left << setw(16) << " | Area = " + str_area
+		<< " | ";
 }

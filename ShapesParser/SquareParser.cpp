@@ -25,7 +25,9 @@ shared_ptr<IShape> SquareParser::parse(stringstream data)
 		getline(data, temp, ',');
 		edge = stod(temp);
 
-		square.reset(new Square(edge));
+		if (edge > 0) {
+			square.reset(new Square(edge));
+		}
 	}
 
 	return square;
