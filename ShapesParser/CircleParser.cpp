@@ -30,3 +30,9 @@ shared_ptr<IShape> CircleParser::parse(stringstream data)
 	
 	return circle;
 }
+
+shared_ptr<CircleParser> CircleParser::getInstance()
+{
+	shared_ptr<CircleParser> circleParser(new CircleParser());
+	return circleParser;
+}

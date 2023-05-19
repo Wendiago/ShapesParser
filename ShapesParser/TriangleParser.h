@@ -7,8 +7,9 @@
 using namespace std;
 
 class TriangleParser :public IParser {
-public:
+private:
+	shared_ptr<TriangleParser> instance;
 	shared_ptr<IShape> parse(stringstream);
 public:
-	static bool isTriangle(double, double, double);
+	static shared_ptr<TriangleParser> getInstance();
 };

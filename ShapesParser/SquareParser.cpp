@@ -30,3 +30,9 @@ shared_ptr<IShape> SquareParser::parse(stringstream data)
 
 	return square;
 }
+
+shared_ptr<SquareParser> SquareParser::getInstance()
+{
+	shared_ptr<SquareParser> squareParser(new SquareParser());
+	return squareParser;
+}

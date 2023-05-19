@@ -37,3 +37,9 @@ shared_ptr<IShape> EllipseParser::parse(stringstream data)
 
 	return ellipse;
 }
+
+shared_ptr<EllipseParser> EllipseParser::getInstance()
+{
+	shared_ptr<EllipseParser> ellipseParser(new EllipseParser());
+	return ellipseParser;
+}

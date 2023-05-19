@@ -23,4 +23,5 @@ public:
 public:
 	double area() const;
 	double perimeter() const;
+	static bool isTriangle(double, double, double);
 };
