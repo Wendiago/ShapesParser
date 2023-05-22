@@ -49,7 +49,7 @@ string Circle::type() const
 /// <returns>Area = radius^2 * PI</returns>
 double Circle::area() const
 {
-	return _radius*_radius*pi;
+	return _radius * _radius * pi;
 }
 
 /// <summary>
@@ -58,7 +58,7 @@ double Circle::area() const
 /// <returns>Circumference = 2PI * radius</returns>
 double Circle::perimeter() const
 {
-	return 2*pi*_radius;
+	return 2 * pi * _radius;
 }
 
 void Circle::simplePrint(ostream& out) const
