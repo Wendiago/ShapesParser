@@ -9,4 +9,20 @@
 
 // add headers that you want to pre-compile here
 
+
+#include "../ShapesParser/IShape.h"
+#include "../ShapesParser/Circle.h"
+#include "../ShapesParser/Triangle.h"
+#include "../ShapesParser/Rectangle.h"
+#include "../ShapesParser/Ellipse.h"
+#include "../ShapesParser/Square.h"
+#include "../ShapesParser/Diamond.h"
+#include "../ShapesParser/IParser.h"
+#include "../ShapesParser/CircleParser.h"
+#include "../ShapesParser/TriangleParser.h"
+#include "../ShapesParser/RectangleParser.h"
+#include "../ShapesParser/EllipseParser.h"
+#include "../ShapesParser/SquareParser.h"
+#include "../ShapesParser/DiamondParser.h"
+
 #endif //PCH_H

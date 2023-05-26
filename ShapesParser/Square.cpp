@@ -49,7 +49,7 @@ string Square::type() const
 /// <returns>Area = edge^2</returns>
 double Square::area() const
 {
-	return _edge*_edge;
+	return _edge * _edge;
 }
 
 /// <summary>
@@ -58,7 +58,7 @@ double Square::area() const
 /// <returns>Perimeter = edge*4</returns>
 double Square::perimeter() const
 {
-	return _edge*4;
+	return _edge * 4;
 }
 
 void Square::simplePrint(ostream& out) const
