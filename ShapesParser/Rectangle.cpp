@@ -66,9 +66,9 @@ string Rectangle::type() const
 /// Calculate Area of a Rectangle object
 /// </summary>
 /// <returns>Area = height * weight</returns>
-double Rectangle::area() const 
+double Rectangle::area() const
 {
-	return _width*_height;
+	return _width * _height;
 }
 
 /// <summary>
@@ -77,7 +77,7 @@ double Rectangle::area() const
 /// <returns>Perimeter = (width+height)*2</returns>
 double Rectangle::perimeter() const
 {
-	return (_width+_height)*2;
+	return (_width + _height) * 2;
 }
 
 void Rectangle::simplePrint(ostream& out) const
