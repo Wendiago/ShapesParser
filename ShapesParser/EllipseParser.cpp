@@ -40,6 +40,10 @@ shared_ptr<IShape> EllipseParser::parse(stringstream data)
 	return ellipse;
 }
 
+/// <summary>
+/// Get an instance of Ellipse Parser
+/// </summary>
+/// <returns>an instance of Ellipse Parser</returns>
 shared_ptr<EllipseParser> EllipseParser::getInstance()
 {
 	shared_ptr<EllipseParser> ellipseParser(new EllipseParser());

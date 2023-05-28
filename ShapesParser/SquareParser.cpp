@@ -33,6 +33,10 @@ shared_ptr<IShape> SquareParser::parse(stringstream data)
 	return square;
 }
 
+/// <summary>
+/// Get an instance of Square Parser
+/// </summary>
+/// <returns>an instance of Square Parser</returns>
 shared_ptr<SquareParser> SquareParser::getInstance()
 {
 	shared_ptr<SquareParser> squareParser(new SquareParser());

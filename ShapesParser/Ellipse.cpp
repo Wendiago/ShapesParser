@@ -85,11 +85,19 @@ double Ellipse::perimeter() const
 	return pi * (3 * (a + b) - sqrt((3 * a + b) * (a + 3 * b)));
 }
 
+/// <summary>
+/// Print only major axis and minor axis
+/// </summary>
+/// <param name="out"></param>
 void Ellipse::simplePrint(ostream& out) const
 {
 	out << this->type() << ": Major Axis = " << this->major_axis() << ", Minor Axis = " << this->minor_axis();
 }
 
+/// <summary>
+/// Print all information of Ellipse
+/// </summary>
+/// <param name="out"></param>
 void Ellipse::detailedPrint(ostream& out) const
 {
 	stringstream ss;

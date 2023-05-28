@@ -61,11 +61,19 @@ double Square::perimeter() const
 	return _edge * 4;
 }
 
+/// <summary>
+/// Print edge only
+/// </summary>
+/// <param name="out"></param>
 void Square::simplePrint(ostream& out) const
 {
 	out << this->type() << ": Edge = " << this->edge();
 }
 
+/// <summary>
+/// Print all information of Square
+/// </summary>
+/// <param name="out"></param>
 void Square::detailedPrint(ostream& out) const
 {
 	stringstream ss;

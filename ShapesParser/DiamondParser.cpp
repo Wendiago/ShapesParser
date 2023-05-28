@@ -40,6 +40,10 @@ shared_ptr<IShape> DiamondParser::parse(stringstream data)
 	return diamond;
 }
 
+/// <summary>
+/// Get an instance of Diamond Parser
+/// </summary>
+/// <returns>an instance of Diamond Parser</returns>
 shared_ptr<DiamondParser> DiamondParser::getInstance()
 {
 	shared_ptr<DiamondParser> diamondParser(new DiamondParser());

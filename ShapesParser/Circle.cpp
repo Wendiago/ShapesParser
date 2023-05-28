@@ -61,11 +61,19 @@ double Circle::perimeter() const
 	return 2 * pi * _radius;
 }
 
+/// <summary>
+/// Print only radius
+/// </summary>
+/// <param name="out"></param>
 void Circle::simplePrint(ostream& out) const
 {
 	out << this->type() << ": Radius = " << this->radius();
 }
 
+/// <summary>
+/// Print all information of Circle
+/// </summary>
+/// <param name="out"></param>
 void Circle::detailedPrint(ostream& out) const
 {
 	stringstream ss;
