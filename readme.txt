@@ -38,5 +38,6 @@ Diamond: p=10, q = 8"
 
 + Các đặc điểm đặc biệt:
 - Sử dụng regex để bắt toàn bộ lỗi về dữ liệu không đúng định dạng và trả về nullptr
+- Các unit tests được viết để xét toàn bộ trường hợp dữ liệu có thể xảy ra của mã nguồn
 
 + Điểm tự đánh giá: 10/10
