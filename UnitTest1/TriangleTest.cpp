@@ -66,5 +66,21 @@ namespace MySolution
 
 			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
 		}
+		TEST_METHOD(Triangle_Parser_Missing_Value_Test)
+		{
+			string data = "a = , b = 4.0, c = 5.0";
+			shared_ptr<IParser> parser = TriangleParser::getInstance();
+			auto result = parser->parse((stringstream)data);
+
+			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
+		}
+		TEST_METHOD(Triangle_Parser_Missing_Variable_Test)
+		{
+			string data = "= 3.0, b = 4.0, c = 5.0";
+			shared_ptr<IParser> parser = TriangleParser::getInstance();
+			auto result = parser->parse((stringstream)data);
+
+			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
+		}
 	};
 }

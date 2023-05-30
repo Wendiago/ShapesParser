@@ -59,5 +59,21 @@ namespace MySolution
 
 			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
 		}
+		TEST_METHOD(Parser_Missing_Value_Test)
+		{
+			string data = "r = ";
+			shared_ptr<IParser> parser = CircleParser::getInstance();
+			auto result = parser->parse((stringstream)data);
+
+			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
+		}
+		TEST_METHOD(Parser_Missing_Variable_Test)
+		{
+			string data = "= 4.7";
+			shared_ptr<IParser> parser = CircleParser::getInstance();
+			auto result = parser->parse((stringstream)data);
+
+			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
+		}
 	};
 }

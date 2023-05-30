@@ -59,5 +59,23 @@ namespace MySolution
 
 			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
 		}
+
+		TEST_METHOD(Square_Parser_Missing_Value_Test)
+		{
+			string data = "a = ";
+			shared_ptr<IParser> parser = SquareParser::getInstance();
+			auto result = parser->parse((stringstream)data);
+
+			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
+		}
+
+		TEST_METHOD(Square_Parser_Missing_Variable_Test)
+		{
+			string data = "= 6.0";
+			shared_ptr<IParser> parser = SquareParser::getInstance();
+			auto result = parser->parse((stringstream)data);
+
+			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
+		}
 	};
 }

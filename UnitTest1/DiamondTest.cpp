@@ -63,5 +63,23 @@ namespace MySolution
 
 			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
 		}
+
+		TEST_METHOD(Diamond_Parser_Missing_Value_Test)
+		{
+			string data = "p = , q = 6.7";
+			shared_ptr<IParser> parser = DiamondParser::getInstance();
+			auto result = parser->parse((stringstream)data);
+
+			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
+		}
+
+		TEST_METHOD(Diamond_Parser_Missing_Variable_Test)
+		{
+			string data = "= 5.0, q = 6.7";
+			shared_ptr<IParser> parser = DiamondParser::getInstance();
+			auto result = parser->parse((stringstream)data);
+
+			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
+		}
 	};
 }

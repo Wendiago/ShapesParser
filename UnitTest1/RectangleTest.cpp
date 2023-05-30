@@ -62,5 +62,23 @@ namespace MySolution
 
 			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
 		}
+
+		TEST_METHOD(Rectangle_Parser_Missing_Value_Test)
+		{
+			string data = "w = , h = 8.0";
+			shared_ptr<IParser> parser = RectangleParser::getInstance();
+			auto result = parser->parse((stringstream)data);
+
+			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
+		}
+
+		TEST_METHOD(Rectangle_Parser_Missing_Variable_Test)
+		{
+			string data = "= 5.0, h = 8.0";
+			shared_ptr<IParser> parser = RectangleParser::getInstance();
+			auto result = parser->parse((stringstream)data);
+
+			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
+		}
 	};
 }

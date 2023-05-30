@@ -66,5 +66,23 @@ namespace MySolution
 
 			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
 		}
+
+		TEST_METHOD(Ellipse_Parser_Missing_Value_Test)
+		{
+			string data = "major = , minor = 4.0";
+			shared_ptr<IParser> parser = EllipseParser::getInstance();
+			auto result = parser->parse((stringstream)data);
+
+			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
+		}
+
+		TEST_METHOD(Ellipse_Parser_Missing_Variable_Test)
+		{
+			string data = "= 4.0, minor = 3.0";
+			shared_ptr<IParser> parser = EllipseParser::getInstance();
+			auto result = parser->parse((stringstream)data);
+
+			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
+		}
 	};
 }
