@@ -9,7 +9,7 @@ namespace MySolution
 	TEST_CLASS(DiamondTest)
 	{
 	public:
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(test_Perimeter)
 		{
 			double diag_p = 6.7;
 			double diag_q = 5.4;
@@ -18,7 +18,7 @@ namespace MySolution
 			Assert::AreEqual(p, d.perimeter());
 		}
 
-		TEST_METHOD(TestMethod2)
+		TEST_METHOD(test_Area)
 		{
 			double diag_p = 6.7;
 			double diag_q = 5.4;
@@ -26,7 +26,7 @@ namespace MySolution
 			Diamond d = Diamond(diag_p, diag_q);
 			Assert::AreEqual(s, d.area());
 		}
-		TEST_METHOD(TestMethod3)
+		TEST_METHOD(TestMettest_Parser_Success)
 		{
 			string data = "p = 6.7, q = 5.4";
 			double diag_p = 6.7;
@@ -39,7 +39,7 @@ namespace MySolution
 			Assert::AreEqual(d.area(), result->area());
 			Assert::AreEqual(d.perimeter(), result->perimeter());
 		}
-		TEST_METHOD(TestMethod4)
+		TEST_METHOD(test_Parser_InvalidStringFormat)
 		{
 			string data = "Undefined";
 			shared_ptr<IParser> parser = DiamondParser::getInstance();
@@ -47,9 +47,17 @@ namespace MySolution
 
 			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
 		}
-		TEST_METHOD(TestMethod5)
+		TEST_METHOD(test_Parser_InvalidValue)
 		{
 			string data = "p = 3.5a, q = 6.7";
+			shared_ptr<IParser> parser = DiamondParser::getInstance();
+			auto result = parser->parse((stringstream)data);
+
+			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
+		}
+		TEST_METHOD(test_Parser_InvalidDiamond)
+		{
+			string data = "p = 0.0, q = 6.7";
 			shared_ptr<IParser> parser = DiamondParser::getInstance();
 			auto result = parser->parse((stringstream)data);
 

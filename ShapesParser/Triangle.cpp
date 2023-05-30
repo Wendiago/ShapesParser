@@ -121,11 +121,19 @@ bool Triangle::isTriangle(double a, double b, double c)
 	return true;
 }
 
+/// <summary>
+/// Print all the edges a, b and c respectively
+/// </summary>
+/// <param name="out"></param>
 void Triangle::simplePrint(ostream& out) const
 {
 	out << this->type() << ": a = " << this->a() << ", b = " << this->b() << ", c = " << this->c();
 }
 
+/// <summary>
+/// Print all information of a Triangle
+/// </summary>
+/// <param name="out"></param>
 void Triangle::detailedPrint(ostream& out) const
 {
 	stringstream ss;

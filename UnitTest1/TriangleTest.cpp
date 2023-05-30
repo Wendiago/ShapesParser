@@ -8,7 +8,7 @@ namespace MySolution
 	TEST_CLASS(TriangleTest)
 	{
 	public:
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(test_Perimeter)
 		{
 			double a = 6.7;
 			double b = 4.5;
@@ -18,7 +18,7 @@ namespace MySolution
 			Assert::AreEqual(p, t.perimeter());
 		}
 
-		TEST_METHOD(TestMethod2)
+		TEST_METHOD(test_Area)
 		{
 			double a = 6.7;
 			double b = 4.5;
@@ -28,7 +28,7 @@ namespace MySolution
 			Triangle t = Triangle(a, b, c);
 			Assert::AreEqual(s, t.area());
 		}
-		TEST_METHOD(TestMethod3)
+		TEST_METHOD(test_Parser_Success)
 		{
 			string data = "a = 6.7, b = 4.5, c = 8.0";
 			double a = 6.7;
@@ -42,7 +42,7 @@ namespace MySolution
 			Assert::AreEqual(t.area(), result->area());
 			Assert::AreEqual(t.perimeter(), result->perimeter());
 		}
-		TEST_METHOD(TestMethod4)
+		TEST_METHOD(test_Parser_InvalidStringFormat)
 		{
 			string data = "Undefined";
 			shared_ptr<IParser> parser = TriangleParser::getInstance();
@@ -50,9 +50,17 @@ namespace MySolution
 
 			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
 		}
-		TEST_METHOD(TestMethod5)
+		TEST_METHOD(test_Parser_InvalidValue)
 		{
 			string data = "a = 6.7a, b = 4.5, c = 8.0";
+			shared_ptr<IParser> parser = TriangleParser::getInstance();
+			auto result = parser->parse((stringstream)data);
+
+			Assert::IsNull(result.get(), L"Should return null", LINE_INFO());
+		}
+		TEST_METHOD(test_Parser_InvalidTriangle)
+		{
+			string data = "a = 1.0, b = 2.0, c = 3.0";
 			shared_ptr<IParser> parser = TriangleParser::getInstance();
 			auto result = parser->parse((stringstream)data);
 

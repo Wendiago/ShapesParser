@@ -79,11 +79,19 @@ double Diamond::perimeter() const
 	return 2 * sqrt(_diagonal_p * _diagonal_p + _diagonal_q * _diagonal_q);
 }
 
+/// <summary>
+/// Print only Diagonal P and Q
+/// </summary>
+/// <param name="out"></param>
 void Diamond::simplePrint(ostream& out) const
 {
 	out << this->type() << ": Diagonal P = " << this->diagonal_p() << ", Diagonal Q = " << this->diagonal_q();
 }
 
+/// <summary>
+/// Print all information of Diamond
+/// </summary>
+/// <param name="out"></param>
 void Diamond::detailedPrint(ostream& out) const
 {
 	stringstream ss;

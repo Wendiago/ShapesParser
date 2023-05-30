@@ -42,6 +42,11 @@ shared_ptr<IShape> TriangleParser::parse(stringstream data)
 	return triangle;
 }
 
+
+/// <summary>
+/// Get an instance of Triangle Parser
+/// </summary>
+/// <returns>an instance of Triangle Parser</returns>
 shared_ptr<TriangleParser> TriangleParser::getInstance()
 {
 	shared_ptr<TriangleParser> triangleParser(new TriangleParser());

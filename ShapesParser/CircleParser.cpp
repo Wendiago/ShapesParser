@@ -33,6 +33,10 @@ shared_ptr<IShape> CircleParser::parse(stringstream data)
 	return circle;
 }
 
+/// <summary>
+/// Get an instance of Circle Parser
+/// </summary>
+/// <returns>an instance of Circle Parser</returns>
 shared_ptr<CircleParser> CircleParser::getInstance()
 {
 	shared_ptr<CircleParser> circleParser(new CircleParser());

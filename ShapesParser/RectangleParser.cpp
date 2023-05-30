@@ -40,6 +40,10 @@ shared_ptr<IShape> RectangleParser::parse(stringstream data)
 	return rectangle;
 }
 
+/// <summary>
+/// Get an instance of Rectangle Parser
+/// </summary>
+/// <returns>an instance of Rectangle Parser</returns>
 shared_ptr<RectangleParser> RectangleParser::getInstance()
 {
 	shared_ptr<RectangleParser> rectangleParser(new RectangleParser());

@@ -80,6 +80,10 @@ double Rectangle::perimeter() const
 	return (_width + _height) * 2;
 }
 
+/// <summary>
+/// Print only height and width
+/// </summary>
+/// <param name="out"></param>
 void Rectangle::simplePrint(ostream& out) const
 {
 	out << this->type() << ": Height = " << this->height() << ", Width = " << this->width();
